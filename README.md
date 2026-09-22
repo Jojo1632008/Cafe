@@ -1,1 +1,76 @@
-# Cafe
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOVA - Purple Edition - Fixed</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--p:#8b5cf6;--p-dark:#7c3aed;--p-light:#f5f3ff;--p-mid:#a78bfa;--text:#111827;--muted:#6b7280;--border:#e9e5f5}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:#fff;color:var(--text);line-height:1.6}
+.container{max-width:1200px;margin:auto;padding:0 20px}
+img{width:100%;display:block;object-fit:cover}
+header{position:sticky;top:0;z-index:99;background:rgba(255,255,255,0.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;padding:14px 20px}
+.logo{font-weight:800;font-size:28px;letter-spacing:1px}
+.btn-p{background:var(--p);color:#fff;padding:13px 26px;border-radius:12px;font-weight:700;border:none;cursor:pointer;transition:.2s}
+.btn-p:hover{background:var(--p-dark)}
+.btn-o{border:1.5px solid var(--border);background:#fff;padding:13px 26px;border-radius:12px;font-weight:700;cursor:pointer}
+.hero{text-align:center;padding:80px 20px 40px;background:var(--p-light)}
+.eyebrow{color:var(--p);font-weight:800;letter-spacing:3px;font-size:12px;margin-bottom:14px}
+.hero h1{font-size:clamp(34px,6vw,60px);font-weight:800;line-height:1.05;max-width:720px;margin:0 auto 16px}
+.hero p{color:var(--muted);max-width:600px;margin:0 auto 26px;font-size:18px}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+/* FIX 2: height بقى على قد الصورة بالظبط */
+.hero-img{border-radius:24px;overflow:hidden;max-width:1100px;margin:auto;height:auto;line-height:0;box-shadow:0 20px 40px rgba(139,92,246,0.15)}
+.hero-img img{height:auto}
+
+.sec{padding:80px 0}.sec-head{text-align:center;margin-bottom:40px}.sec-head h2{font-size:42px;font-weight:800}.sec-head p{color:var(--muted);font-size:18px;margin-top:8px}
+.cards{display:grid;gap:20px;grid-template-columns:1fr}@media(min-width:800px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{border:1px solid var(--border);border-radius:18px;padding:32px;background:#fff;transition:.2s}.card:hover{border-color:var(--p-mid);transform:translateY(-3px)}.card span{color:var(--p);font-weight:800;font-size:26px}
+.team-grid{display:grid;gap:22px;grid-template-columns:1fr}@media(min-width:600px){.team-grid{grid-template-columns:repeat(2,1fr)}}@media(min-width:1000px){.team-grid{grid-template-columns:repeat(4,1fr)}}
+.member{border:1px solid var(--border);border-radius:18px;overflow:hidden;background:#fff}.member img{height:300px}.member-info{padding:20px}.role{color:var(--p);font-weight:700;font-size:14px;margin:4px 0}.member-info p{color:var(--muted);font-size:14px;margin-top:6px}
+.about{background:var(--p-light);text-align:center}
+/* FIX 2: هنا كمان */
+.about-img{border-radius:24px;overflow:hidden;margin-top:40px;height:auto;line-height:0}
+.about-img img{height:auto}
+
+.proj-grid{display:grid;gap:22px;grid-template-columns:1fr}@media(min-width:800px){.proj-grid{grid-template-columns:repeat(2,1fr)}}
+.proj{border:1px solid var(--border);border-radius:18px;overflow:hidden;background:#fff;transition:.2s}.proj:hover{transform:translateY(-4px);border-color:var(--p-mid)}.proj img{height:260px}.proj-foot{display:flex;justify-content:space-between;align-items:center;padding:18px 20px}
+.testimonials{background:#fbf8ff}.test-grid{display:grid;gap:20px;grid-template-columns:1fr;max-width:900px;margin:auto}@media(min-width:800px){.test-grid{grid-template-columns:1fr}}@media(min-width:900px){.test-grid{grid-template-columns:repeat(2,1fr)}}
+.quote{border:1px solid var(--border);background:#fff;border-radius:18px;padding:28px}.quote em{font-size:18px;line-height:1.6}.quote b{display:block;margin-top:20px;font-size:18px}.quote small{color:var(--muted)}
+.contact{background:#fff;text-align:center;padding:80px 20px}.contact h2{font-size:48px;font-weight:800}.contact-box{max-width:600px;margin:30px auto 0;border:1px solid var(--border);border-radius:18px;padding:30px;text-align:left}
+.contact-box label{font-weight:700;display:block;margin:16px 0 8px}.contact-box input,.contact-box textarea{width:100%;padding:14px;border:1px solid var(--border);border-radius:12px;background:#faf8ff;outline:none}.contact-box input:focus,.contact-box textarea:focus{border-color:var(--p)}.contact-box textarea{height:120px;resize:vertical}
+.footer-dark{background:#0f172a;color:#94a3b8;padding:60px 20px;text-align:center}.footer-dark h2{color:#fff;font-size:32px;font-weight:800}.footer-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:20px;color:#94a3b8}
+</style>
+</head>
+<body>
+<header><div class="logo">NOVA</div><button class="btn-p">Let's Talk</button></header>
+
+<!-- FIX 1: ضيفنا container هنا -->
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">CREATIVE DIGITAL STUDIO</div>
+    <h1>We Build Digital Experiences That Matter.</h1>
+    <p>We help businesses create modern websites and digital experiences that connect with their audience.</p>
+    <div class="hero-btns"><button class="btn-p">Start a Project</button><button class="btn-o">View Our Work</button></div>
+    <div class="hero-img"><img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1200" alt="hero"></div>
+  </div>
+</section>
+
+<section class="sec container"><div class="sec-head"><h2>What We Do</h2><p>We combine creativity and technology to help businesses grow.</p></div><div class="cards"><div class="card"><span>01</span><h3 style="margin:16px 0 8px">Web Development</h3><p style="color:var(--muted)">Modern and responsive websites built for real businesses.</p></div><div class="card"><span>02</span><h3 style="margin:16px 0 8px">UI/UX Design</h3><p style="color:var(--muted)">Simple and intuitive interfaces designed around users.</p></div><div class="card"><span>03</span><h3 style="margin:16px 0 8px">Branding</h3><p style="color:var(--muted)">Visual identities that make brands memorable.</p></div></div></section>
+
+<section class="sec container"><div class="sec-head"><h2>Selected Projects</h2><p>A few things we've created for our clients.</p></div><div class="proj-grid"><div class="proj"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" alt="Mono"><div class="proj-foot"><div><h3>Mono</h3><small style="color:var(--muted)">Brand Website</small></div><span>→</span></div></div><div class="proj"><img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800" alt="Vanta"><div class="proj-foot"><div><h3>Vanta</h3><small style="color:var(--muted)">E-Commerce Website</small></div><span>→</span></div></div><div class="proj"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800" alt="Echo"><div class="proj-foot"><div><h3>Echo</h3><small style="color:var(--muted)">Digital Platform</small></div><span>→</span></div></div><div class="proj"><img src="https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=800" alt="Bloom"><div class="proj-foot"><div><h3>Bloom</h3><small style="color:var(--muted)">Branding Project</small></div><span>→</span></div></div></div></section>
+
+<section class="sec"><div class="container"><div class="sec-head"><h2>Meet Our Team</h2><p>A small team of creative people passionate about building great digital experiences.</p></div><div class="team-grid"><div class="member"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600"><div class="member-info"><h4>Ahmed Hassan</h4><div class="role">Creative Director</div><p>Leading creative ideas and helping brands tell their story.</p><b>LinkedIn →</b></div></div><div class="member"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600"><div class="member-info"><h4>Tarek Ali</h4><div class="role">UI/UX Designer</div><p>Designing simple and meaningful digital experiences.</p><b>LinkedIn →</b></div></div><div class="member"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600"><div class="member-info"><h4>Omar Khaled</h4><div class="role">Front-End Developer</div><p>Turning designs into fast and responsive websites.</p><b>LinkedIn →</b></div></div><div class="member"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600"><div class="member-info"><h4>Kareem Adel</h4><div class="role">Brand Designer</div><p>Creating visual identities that make brands memorable.</p><b>LinkedIn →</b></div></div></div></div></section>
+
+<section class="sec about"><div class="container"><div class="eyebrow">ABOUT NOVA</div><h2 style="font-size:clamp(30px,5vw,50px);font-weight:800;max-width:700px;margin:10px auto">We turn ideas into digital experiences.</h2><p style="color:var(--muted);max-width:700px;margin:14px auto 24px;font-size:18px">NOVA is a creative digital studio focused on creating simple, useful, and beautiful digital experiences for modern businesses.</p><button class="btn-p">Learn More</button><div class="about-img"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200"></div></div></section>
+
+<section class="sec testimonials"><div class="container"><div class="sec-head"><h2>What Our Clients Say</h2></div><div class="test-grid"><div class="quote"><em>"Working with NOVA was a great experience. They understood our idea and turned it into a beautiful website."</em><b>Ahmed Hassan</b><small>Founder, Mono</small></div><div class="quote"><em>"NOVA helped us create a website that finally represents our brand."</em><b>Sara Ali</b><small>Marketing Manager</small></div><div class="quote"><em>"Simple, professional, and creative. Highly recommended."</em><b>Omar Khaled</b><small>CEO, Vanta</small></div></div></div></section>
+
+<!-- FIX 1: ضيفنا container هنا -->
+<section class="contact"><div class="container"><h2>Let's Work Together</h2><p style="color:var(--muted);max-width:600px;margin:10px auto;font-size:18px">Have a project in mind? Tell us about it and let's create something great.</p><div style="margin:30px 0"><div style="color:var(--p);font-weight:800;letter-spacing:2px">EMAIL</div><div style="font-weight:700;font-size:20px">hello@novastudio.com</div><div style="color:var(--p);font-weight:800;letter-spacing:2px;margin-top:20px">LOCATION</div><div style="font-weight:700;font-size:20px">Cairo, Egypt</div></div><div class="contact-box"><label>Name</label><input placeholder="Your name"><label>Email</label><input placeholder="Your email address"><label>Message</label><textarea placeholder="Tell us about your project..."></textarea><button class="btn-p" style="width:100%;margin-top:20px">Send Message</button></div></div></section>
+
+<footer class="footer-dark"><div class="container"><h2>NOVA</h2><p style="max-width:500px;margin:10px auto">Creating simple digital experiences for modern businesses.</p><div class="footer-links"><span>Home</span><span>Services</span><span>Team</span><span>About</span><span>Projects</span><span>Contact</span></div></div></footer>
+</body>
+</html>
